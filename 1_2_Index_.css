@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.header-wrapper {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+/* _______________________Main container _____________________________ */
+.header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  min-height: 56px;
+
+
+  
+
+/* __________________Fade-in animation on load_______________________ */
+  @keyframes headerAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header_container {
+  animation: headerAppear 0.6s ease-out forwards;
+    }
+}
+
+
+/* _________________________Logo__________________________________________ */
+
+.logo a {
+    font-size: 1.5rem;          
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+}
+
+/* _________________________Search_____________________________________ */
+
+.search_form {
+      flex:1;
+      max-width: 480px;
+}
+
+.search_form input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px 0 44px;
+    border: 1.5px solid #ccc;
+    border-radius: 9999px;
+    font-size: 15px;
+    background: #f9fafb;
+    transition: all 0.25s ease;
+    
+}
+
+.search_form input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.14),
+               0 11px 15px rgba(164, 25, 214, 0.08);
+    transform: scale(1.015);
+}
+
+/* ______________________________Navigation__________________________________ */
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;                   
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li a {
+    color: #1f2937;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.22s ease;
+    opacity: 0.92;
+}
+.navigation ul li a:hover {
+    color: #e11d48;
+    background: rgba(225, 29, 72, 0.06);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.12);
+    opacity: 1;
+}
+
+/* _________________________Emergency button style_______________________________ */
+.navigation .emergency {
+  background: #ef4444;
+  color: white !important;
+  font-weight: 600;
+}
+
+.navigation .emergency:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+}
+
+/* _____________________________Mobile__________________________________________*/
+@media (max-width: 1024px) {
+    .header {
+        padding: 0 16px;
+        min-height: 56px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .search_form {
+        order: 3;
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+
+    .navigation ul {
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .navigation ul li a {
+        font-size: 13.5px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo a {
+        font-size: 1.35rem;
+    }
+
+    .navigation ul {
+        gap: 2px;
+    }
+}
+
+/*_______________________________Emergency Button _______________________________ */
+
+.emergency-btn {
+
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: #dc2626;                                                                  /* strong red – danger color */
+color: white !important;
+font-weight: 600;
+font-size: 15px;
+
+padding: 9px 18px;                                                                      /* comfortable click area */
+border-radius: 9999px;                                                                  /* pill shape – modern & friendly */
+
+text-decoration: none;
+transition: all 0.18s ease;
+
+box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);                                       /* soft red glow */
+}
+
+.emergency-btn:hover,
+.emergency-btn:focus-visible {
+  background: #b91c1c !important;                                                   /* darker green on interaction */
+  transform: translateY(-2px);                                                         /* subtle lift */
+  box-shadow: 0 6px 18px rgba(185,28,28,0.35);
+  outline: none;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70%      { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
+.emergency-btn.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+/* ______________________Icon styling_________________________________ */
+.emergency-btn .icon {
+  font-size: 1.1em;                                                                   /* slightly bigger icon */
+}
+
+
+/* ______________________Search-Icon_____Working-Here_______________________________ */
+.search-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+   z-index: 2; 
+  
+}
+
+.search_form input {
+  padding-left: 44px;                                                                  /* icon ke liye space */
+  position: relative;
+  z-index: 1;
+}
+
+
+/* _____________________Yhaa se Drodown list ki css bana raki hai maine__________________________  */
+.unorder_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.unorder_list > li {
+    position: relative;                                                             /* Bahut zaroori – dropdown position ke liye */
+}
+
+.unorder_list a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* ______________________________Dropdown menu – ek hi block, no duplicates_________________________________ */
+.dropdown-menu {
+    display: none !important;                                                         /* Shuru mein hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;                                                                          /* Ya right: 0; left: auto; agar right side chipka chahiye */
+    background: white;
+    min-width: 280px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;                                                                     /* High z-index taaki cover na ho */
+    border-radius: 6px;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+
+    max-height: 320px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;                                                         /* Shift fix ke liye */
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+/*__________________________ Hover pe show – yeh selector sahi hai agar dropdown <li> ke andar hai______________________________ */
+.unorder_list > li:hover > .dropdown-menu {
+    display: block !important;                                                        /* !important add kar ke test kar sakte ho pehle */
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+}
+
+.dropdown-menu li a:hover {
+    background: #f0f0f0;
+}
+
+/* _______________________Active class______________________________________*/
+.dropdown-menu .active {
+    background: #e0f7fa;
+    font-weight: bold;
+    color: #006064;
+}
+
+/* ________________________Scrollbar nice look_____________________________ */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* _________________________MAIN_LOGO CSS___________________________________________ */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.logo img {
+    width: 120px;        /* logo ka size */
+    height: auto;        /* ratio maintain */
+    cursor: pointer;
+}
+
+/* ____________________________Notifiction-WOrk_________________________________________ */
+
+.bell-wrapper {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -7px;
+    right: -18px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    padding: 2px 6px;
+}
+
+
+
+/* __________________________________This Is For Blue Box Or We Can Say Section Part Into Main ____________________________________________________________ */
+
+
+.hero{
+    background: linear-gradient(120deg,#4f46e5,#06b6d4);
+    color:white;
+    padding:80px 20px;
+}
+
+.hero-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero-text h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:16px;
+    line-height:1.6;
+    opacity:0.9;
+}
+
+.hero-buttons{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+}
+
+.btn-primary{
+    background:white;
+    color:#111;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn-secondary{
+    border:2px solid white;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+}
+
+.hero-image img{
+    width:420px;
+    max-width:100%;
+}

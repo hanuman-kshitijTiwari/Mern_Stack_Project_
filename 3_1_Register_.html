@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration Form</title>
+    <link rel="stylesheet" href="3_2_Registration_.css">
+</head>
+<body>
+
+    <h1>Driver Registration Form</h1>
+
+    <form>
+
+        <!-- Personal Details -->
+
+        <fieldset>
+            <legend><h3>Personal Details</h3></legend>
+
+            <label>Full Name:</label><br>
+            <input type="text" name="fullname" required><br><br>
+
+            <label>Date of Birth:</label><br>
+            <input type="date" name="dob" required><br><br>
+
+            <label>Mobile Number:</label><br>
+            <input type="tel" name="mobile" required><br><br>
+
+            <label>Email ID:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Address (City, State, PIN):</label><br>
+            <textarea name="address" rows="3" required></textarea><br><br>
+        </fieldset>
+
+        <!-- Identity Proof -->
+        <fieldset>
+            <legend><h3>Identity Proof</h3></legend>
+
+            <label>Aadhaar Number / ID Proof:</label><br>
+            <input type="text" name="aadhaar" required><br><br>
+
+            <label>Upload Profile Photo:</label><br>
+            <input type="file" name="photo"><br><br>
+        </fieldset>
+
+        <!-- Driving Details -->
+
+        <fieldset>
+            <legend><h3>Driving Details</h3></legend>
+
+            <label>Driving License Number:</label><br>
+            <input type="text" name="license_no" required><br><br>
+
+            <label>License Expiry Date:</label><br>
+            <input type="date" name="expiry_date" required><br><br>
+
+            <label>License Type:</label><br>
+            <select name="license_type">
+                <option>LMV</option>
+                <option>HMV</option>
+                <option>MCWG</option>
+                <option>Transport</option>
+            </select><br><br>
+        </fieldset>
+
+        
+        <!-- Vehicle Details -->
+        <fieldset>
+            <legend><h3>Vehicle Details (If driver uses own vehicle)</h3></legend>
+
+            <label>Vehicle Type:</label><br>
+            <select name="vehicle_type">
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Truck</option>
+                <option>Auto</option>
+            </select><br><br>
+
+            <label>Vehicle Number (RC Number):</label><br>
+            <input type="text" name="vehicle_number"><br><br>
+
+            <label>Insurance Details:</label><br>
+            <input type="text" name="insurance"><br><br>
+        </fieldset>
+
+        <!-- Login Details -->
+        <fieldset>
+            <legend><h3>Login Details</h3></legend>
+
+            <label>Username / Email:</label><br>
+            <input type="text" name="username" required><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password" name="confirm_password" required><br><br>
+        </fieldset>
+
+        <!-- Safety / Verification -->
+        <fieldset>
+            <legend><h3>Safety / Verification</h3></legend>
+
+            <label>Emergency Contact Number:</label><br>
+            <input type="tel" name="emergency_contact" required><br><br>
+
+            <label>Police Verification:</label><br>
+            <input type="radio" name="police_verification" value="yes"> Yes
+            <input type="radio" name="police_verification" value="no"> No
+            <br><br>
+        </fieldset>
+
+        <br>
+        <button type="submit">Register</button>
+
+    </form>
+
+</body>
+</html>
