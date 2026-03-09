@@ -402,3 +402,155 @@ box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);                                   
     width:420px;
     max-width:100%;
 }
+
+
+/* ================= FEATURES SECTION ================= */
+
+.features {
+    padding: 90px 8%;
+    background: #f1f5f9;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* CATEGORY TITLE */
+
+.category-title {
+    font-size: 26px;
+    margin: 70px auto 35px;
+    max-width: 1200px;
+    text-align: left;
+    color: #1e293b;
+    font-weight: 600;
+    border-left: 6px solid #3b82f6;
+    padding-left: 14px;
+}
+
+/* GRID */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARD */
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CARD TOP LINE */
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+/* TITLE */
+
+.feature-card h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* TEXT */
+
+.feature-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* HOVER EFFECT */
+
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* ICON */
+
+.feature-card i {
+    font-size: 38px;
+    color: #3b82f6;
+    margin-bottom: 18px;
+    background: #eff6ff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+}
+
+.feature-card:hover i {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= MAP SECTION ================= */
+
+.map-section {
+    padding: 80px 8%;
+    text-align: center;
+    background: white;
+}
+
+.map-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.map-section p {
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+#map {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
