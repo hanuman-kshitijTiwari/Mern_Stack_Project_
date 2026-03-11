@@ -1,225 +1,447 @@
+/* ___________________________________________________________________________RESET_____________________________________________________________________________________ */
+
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-/* __________________________________________________Whole Body Work Here ____________________________________________________________________ */
+
+
+/*____________________________________________________________________________ BODY ____________________________________________________________________________________ */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  min-height: 100vh;
-  /* display: flex;
-  align-items: left;
-  justify-content: left; */
-  padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+/* _______________________________________________________________________BACKGROUND IMAGE______________________________________________________________________________ */
+    background-image: url("/Images/Truck_image_4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    position: relative;
 }
 
-.main-container {
-  display:flex;
-  height: 100vh;
-  width: 100%;
-   align-items: stretch;   /* IMPORTANT */
+
+
+/* __________________________________________________________________________DARK OVERLAY_______________________________________________________________________________ */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(5, 15, 40, 0.85) 0%,
+        rgba(5, 15, 40, 0.65) 40%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+
+    z-index: 0;
 }
 
+
+
+/* ________________________________________________________________________________HEADER_______________________________________________________________________________ */
+header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 70px;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+
+/* __________________________________________________________________________________LOGO _______________________________________________________________________________*/
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+/* _____________________________________________________________________________EMERGENCY BUTTON ________________________________________________________________________*/
+.emergency {
+    background: linear-gradient(90deg, #ff9d00, #ff3c00);
+    padding: 10px 22px;
+    border-radius: 30px;
+
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.emergency:hover,
+.emergency:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 100, 0, 0.6);
+    outline: none;
+}
+
+
+
+/* ______________________________________________________________________________MAIN LOGIN SECTION _____________________________________________________________________*/
+.login-section {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 80px 120px;
+    flex: 1;
+}
+
+
+
+/* ___________________________________________________________________________________LEFT CONTENT______________________________________________________________________ */
+.left-content {
+    max-width: 520px;
+}
+
+.left-content h1 {
+    font-size: 72px;
+    margin-bottom: 30px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #ffffff, #ff9d00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.left-content p {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.left-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.left-content ul li {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.left-content ul li::before {
+    content: "✔";
+    color: #ff9d00;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+
+
+/* __________________________________________________________________________________ LOGIN CARD ________________________________________________________________________*/
 .login-card {
-  background: white;
-  border-radius: 2px;
-  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
-  box-shadow: 8px 8px 20px rgba(255, 0, 0, 0.2), -8px -8px 20px rgba(255, 150, 150, 0.5);
-  width: 40%;
-  /* margin: auto; */
-  overflow: hidden;
-  height: 100vh;
-  
+    width: 400px;
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+
+    color: white;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+    transition: 0.4s;
+}
+
+.login-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+}
+
+.login-card h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.sub {
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 30px;
 }
 
 
 
-/* ____________________________________________________________Header_____________________________________________________________________ */
-.header {
-  background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
-  color: white;
-  padding: 40px 30px;
-  text-align: center;
+
+/* ___________________________________________________________________________________FORM LABELS _______________________________________________________________________*/
+.login-card label {
+    display: block;
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #eee;
 }
 
-.header h1 {
-  font-size: 32px;
-  font-weight: 700;
+
+
+
+/* ___________________________________________________________________________________INPUT FIELDS______________________________________________________________________ */
+.login-card input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+/* __________________________________________________________________________PASSWORD SHOW/HIDE________________________________________________________________________ */
+
+.password-box {
+    position: relative;
+    /* display: flex;
+    align-items: center; */
+    
 }
 
-.header p {
-  margin-top: 8px;
-  opacity: 0.9;
-  font-size: 16px;
+.password-box input {
+    width: 100%;
+    padding: 15px 45px 15px 15px;/* space for eye icon */
+     margin-bottom: 0;
 }
 
-/* _________________________________________________________Form Area______________________________________________________________________ */
-.form-container {
-  padding: 40px 30px;
+.toggle-password {
+    position: absolute;
+    top: 50% ;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
 }
 
-.form-group {
-  margin-bottom: 24px;
+.login-card input::placeholder {
+    color: #ddd;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #374151;
-  font-size: 15px;
+.login-card input:focus {
+    outline: none;
+    border-color: #ff9d00;
+    box-shadow: 0 0 8px rgba(255, 150, 0, 0.6);
 }
 
-.input-field {
-  width: 100%;
-  padding: 16px 20px;
-  border: 2px solid #e5e7eb;
-  border-radius: 16px;
-  font-size: 17px;
-  transition: all 0.3s;
+
+
+
+/* ______________________________________________________________________________________REMEMBER CHECKBOX ______________________________________________________________*/
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    margin-top: 5%;
 }
 
-.input-field:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+.remember input {
+    width: auto;
+    cursor: pointer;
+    accent-color: #ff9d00;
+    transform: translateY(1px);
+    
 }
 
-/* _______________________________________________________Big Login Button________________________________________________________________ */
-.login-btn {
-  width: 100%;
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 18px;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: all 0.3s;
+
+
+/* _____________________________________________________________________________________________ROW_____________________________________________________________________ */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.login-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
+.row a {
+    text-decoration: none;
+    color: #ff9d00;
 }
 
-/* _____________________________________________________________Bottom Two Buttons______________________________________________________ */
-.action-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 32px;
+.row a:hover,
+.row a:focus {
+    text-decoration: underline;
+    outline: none;
 }
 
-.reset-btn, .create-btn {
-  flex: 1;
-  padding: 16px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.3s;
+
+
+
+/* _______________________________________________________________________________________LOGIN BUTTON__________________________________________________________________ */
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(90deg, #ff9d00, #ff5200);
+
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.reset-btn {
-  background: #f3f4f6;
-  color: #374151;
-  border: none;
+button:hover,
+button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 120, 0, 0.6);
+    outline: none;
 }
 
-.reset-btn:hover {
-  background: #e5e7eb;
+
+
+
+/* ___________________________________________________________________________________________SIGNUP TEXT________________________________________________________________*/
+.signup {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
 }
 
-.create-btn {
-  background: #16a34a;
-  color: white;
-  border: none;
+.signup a {
+    color: #ff9d00;
+    text-decoration: none;
 }
 
-.create-btn:hover {
-  background: #15803d;
+.signup a:hover,
+.signup a:focus {
+    text-decoration: underline;
+    outline: none;
 }
 
-/* _______________________________________________________________Responsive__________________________________________________________________ */
+
+
+
+/* ______________________________________________________________________________________________FOOTER _________________________________________________________________*/
+footer {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding: 18px;
+
+    background: rgba(0, 0, 0, 0.35);
+    font-size: 14px;
+
+    margin-top: auto;
+}
+
+.footer-links {
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #ff9d00;
+    text-decoration: underline;
+    outline: none;
+}
+
+
+
+/* _______________________________________________________________________________________________RESPONSIVE DESIGN _____________________________________________________*/
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .emergency {
+        width: 100%;
+        text-align: center;
+    }
+
+    .login-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .left-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .left-content h1 {
+        font-size: 48px;
+    }
+
+    .left-content p {
+        font-size: 18px;
+    }
+
+    .left-content ul li {
+        font-size: 16px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
 @media (max-width: 480px) {
-  .login-card {
-    border-radius: 20px;
-  }
-}
 
-/* __________________________________________For H3 Heading____________________________________________________________________________________ */
-h3 {
-    text-align: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 800;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 195, 255, 0.6); /* basic single shadow */
-    letter-spacing: -1px;
-    margin: 0 0 12px 0;
-    line-height: 1.1;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
+    .left-content h1 {
+        font-size: 36px;
+    }
 
+    .login-card {
+        padding: 25px;
+    }
 
-h3:hover {                                                                                                  /* ___Simple hover glow effect______ */
-    text-shadow: 2px 2px 6px rgba(0, 195, 255, 0.9);                                                      /*____thoda bada aur intense_________ */
-    transform: scale(1.03);
 }
 
 
 
-/* ___________________________________________________MAINE YAHA LOGIN KO iMPROVE KIYA HAI CHAT-GPT SE _________________________________________________ */
-h1 {
-    text-align: center;
-    color: #ffffff;
-    font-size: 32px;                                                                                         /*_________ bada size for h1__________ */
-    font-weight: 800;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 195, 255, 0.6);                                                       /*____________ simple shadow___________ */
-    letter-spacing: -1px;
-    margin: 0 0 15px 0;
-    line-height: 1.1;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-
-h1:hover {                                                                                                  /* _________Hover glow effect___________ */
-    text-shadow: 2px 2px 6px rgba(0, 195, 255, 0.9);                                                      /*______ thoda zyada glow on hover______ */
-    transform: scale(1.03);
-}
-
-/* ______________________________ImageSection_Truck_Picture___________________________________________________________________________________________ */
-.image-section {
-  width: 60%;
-  height: 100vh;
-  background: url('Images/truck_picture.png') center/cover no-repeat;
-  position: relative;
-}
-
-.overlay {
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px;
-  border-radius: 100px;
-  
-}
-
-
-
-
-
-
-
-
-
-
+/* ________________________________________________________________________________Complete_____________________________________________________________________________ */
