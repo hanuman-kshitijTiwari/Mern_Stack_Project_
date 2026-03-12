@@ -1,0 +1,260 @@
+html,body{
+height:100%;
+margin:0;
+padding:0;
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+background:#f5f7fa;
+color:#333;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+body{
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+main{
+flex:1;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#1e3a8a,#3b82f6);
+color:white;
+padding:1rem 5%;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.15);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:bold;
+}
+
+.logo span{
+color:#fbbf24;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:2rem;
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:#fbbf24;
+}
+
+
+/* Hero */
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1502877338535-766e3a6052c0?auto=format&fit=crop&w=1920&q=80');
+
+background-size:cover;
+background-position:center;
+
+color:white;
+text-align:center;
+padding:80px 5% 60px;
+}
+
+.hero h1{
+font-size:2.8rem;
+margin-bottom:1rem;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+margin-bottom:2rem;
+}
+
+.btn{
+background:#fbbf24;
+color:#1e293b;
+padding:0.9rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#f59e0b;
+transform:translateY(-2px);
+}
+
+
+/* Main Container */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 5%;
+}
+
+.signup-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:start;
+}
+
+
+/* Benefits */
+
+.benefits h2{
+color:#1e3a8a;
+font-size:2.2rem;
+margin-bottom:1.5rem;
+}
+
+.benefits li{
+font-size:1.1rem;
+margin-bottom:1rem;
+display:flex;
+align-items:center;
+}
+
+.benefits i{
+color:#10b981;
+font-size:1.5rem;
+margin-right:12px;
+}
+
+
+/* Form */
+
+.form-card{
+background:white;
+border-radius:16px;
+padding:35px;
+box-shadow:0 10px 40px rgba(0,0,0,0.12);
+max-height:80vh;
+overflow-y:auto;
+}
+
+.form-card h2{
+text-align:center;
+margin-bottom:1.8rem;
+}
+
+.form-group{
+margin-bottom:1.4rem;
+}
+
+label{
+display:block;
+margin-bottom:0.4rem;
+font-weight:600;
+color:#475569;
+}
+
+input{
+width:100%;
+padding:12px 14px;
+border:1px solid #d1d5db;
+border-radius:8px;
+font-size:1rem;
+}
+
+input:focus{
+border-color:#3b82f6;
+box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+outline:none;
+}
+
+
+/* Password row */
+
+.password-group{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1rem;
+}
+
+
+/* Button */
+
+.submit-btn{
+width:100%;
+background:#10b981;
+color:white;
+border:none;
+padding:1rem;
+font-size:1.1rem;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+margin-top:1rem;
+}
+
+.submit-btn:hover{
+background:#059669;
+}
+
+
+/* Login text */
+
+.login-text{
+text-align:center;
+margin-top:1.5rem;
+color:#64748b;
+}
+
+.login-text a{
+color:#3b82f6;
+text-decoration:none;
+}
+
+
+/* Footer */
+
+footer{
+background:#1e293b;
+color:#94a3b8;
+text-align:center;
+padding:1.5rem;
+margin-top:auto;
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.signup-section{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.hero{
+padding:60px 5% 40px;
+}
+
+.form-card{
+padding:25px;
+}
+
+}
