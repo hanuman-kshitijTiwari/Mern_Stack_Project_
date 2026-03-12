@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TruckSupport - 24/7 Roadside Assistance & Driver Network</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden; /* horizontal scroll avoid */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* full viewport height */
+    }
+
+    main {
+      flex: 1; /* content ko push karega footer niche */
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #fbbf24;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #fbbf24;
+    }
+
+    /* Hero - thoda compact kiya */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1502877338535-766e3a6052c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 5% 60px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      background: #fbbf24;
+      color: #1e293b;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #f59e0b;
+      transform: translateY(-2px);
+    }
+
+    /* Main Content */
+    main .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 5%;
+    }
+
+    .signup-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .benefits h2 {
+      color: #1e3a8a;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefits li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .benefits i {
+      color: #10b981;
+      font-size: 1.5rem;
+      margin-right: 12px;
+    }
+
+    /* Form Card - scrollable if too long */
+    .form-card {
+      background: white;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      max-height: 80vh; /* agar bohot fields to scroll */
+      overflow-y: auto; /* yaha scroll enable */
+    }
+
+    .form-card h2 {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+      outline: none;
+    }
+
+    .password-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      background: #059669;
+    }
+
+    footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: auto; /* footer niche push */
+    }
+
+    @media (max-width: 768px) {
+      .signup-section {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero {
+        padding: 60px 5% 40px;
+      }
+      .form-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Truck<span>Support</span></div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Drivers</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>24/7 Roadside Assistance for Truck Drivers</h1>
+      <p>Join the network for verified loads, fast payments, and instant support.</p>
+      <a href="#signup" class="btn">Sign Up as Driver →</a>
+    </section>
+
+    <div class="container" id="signup">
+      <div class="signup-section">
+        
+        <div class="benefits">
+          <h2>Why Join Us?</h2>
+          <ul>
+            <li><i class="fas fa-rupee-sign"></i> Fast & Reliable Payments</li>
+            <li><i class="fas fa-check-circle"></i> Verified & Safe Loads Only</li>
+            <li><i class="fas fa-headset"></i> 24/7 Driver Support</li>
+            <li><i class="fas fa-map"></i> Easy Route Planning</li>
+            <li><i class="fas fa-tools"></i> Quick Mechanic Service</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <h2>Driver Sign Up</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="license">Driving License Number</label>
+              <input type="text" id="license" required>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicle">Vehicle / Truck Number</label>
+              <input type="text" id="vehicle" required>
+            </div>
+
+            <div class="password-group">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+              </div>
+              <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" required>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
+
+            <div style="text-align:center; margin-top:1.5rem; color:#64748b;">
+              Already have an account? <a href="#" style="color:#3b82f6; text-decoration:none;">Login</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 TruckSupport | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
