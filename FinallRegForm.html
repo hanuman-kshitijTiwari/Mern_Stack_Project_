@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Driver Sign Up - Premium SaaS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="FinallRegFormCSS.css">
+</head>
+<body>
+
+<!-- Ambient Glow Orbs -->
+<div class="glow-orb orb-1"></div>
+<div class="glow-orb orb-2"></div>
+<div class="glow-orb orb-3"></div>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">Truck<span>Support</span></div>
+    <a href="login.html">Sign In</a>
+</div>
+
+<div class="split-layout">
+    
+    <div class="left-pane">
+        <div class="content-wrapper stagger-1">
+            <div class="badge"><i class="fas fa-shield-alt"></i> Premium Carrier Network</div>
+            <h1 class="left-title">Never Stranded.<br>Always Supported.</h1>
+            <p class="left-desc">Breakdowns shouldn't break the bank. Join the premium network providing fast, reliable towing and assistance exactly when you need it.</p>
+            
+            <div class="stats-row stagger-2">
+                <div class="stat-box">
+                    <h4>10k+</h4>
+                    <span>Active Drivers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-box">
+                    <h4><i class="fas fa-star text-amber"></i> 4.9/5</h4>
+                    <span>Driver Rating</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-box">
+                    <h4>~15min</h4>
+                    <span>Avg. Response</span>
+                </div>
+            </div>
+
+            <div class="highlights stagger-3">
+                <div class="highlight-item">
+                    <div class="icon-wrap"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="highlight-text">
+                        <h3>Emergency Towing</h3>
+                        <p>24/7 heavy rig extraction & recovery</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="icon-wrap"><i class="fas fa-oil-can"></i></div>
+                    <div class="highlight-text">
+                        <h3>Mobile Fueling</h3>
+                        <p>Commercial diesel drop-offs quickly</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="icon-wrap"><i class="fas fa-wrench"></i></div>
+                    <div class="highlight-text">
+                        <h3>Mobile Mechanics</h3>
+                        <p>Immediate roadside diagnostics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card stagger-4">
+                <p>"The mechanics arrive faster than any dispatcher I've ever used. Completely saved my OTR run last week."</p>
+                <div class="author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Driver">
+                    <div class="author-info">
+                        <strong>Marcus T.</strong>
+                        <span>Owner Operator, Texas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-pane">
+        <div class="glass-card stagger-3">
+            <div class="form-header">
+                <h2 class="right-title">Driver Activation</h2>
+                <p class="right-subtitle">Set up your operational credentials</p>
+            </div>
+            
+            <form action="#" method="POST">
+                
+                <div class="section-title"><i class="fas fa-id-card"></i> Personal ID</div>
+                <div class="form-grid">
+                    <div class="form-group floating span-12">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group floating span-12">
+                        <input type="email" id="email" placeholder=" ">
+                        <label for="email">Email Address (Optional)</label>
+                    </div>
+                    <div class="form-group floating span-6">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="form-group floating span-6">
+                        <input type="text" id="license" placeholder=" " required>
+                        <label for="license">CDL License No.</label>
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-truck"></i> Fleet Details</div>
+                <div class="form-grid">
+                    <div class="form-group floating span-12">
+                        <input type="text" id="vehicle" placeholder=" " required>
+                        <label for="vehicle">Truck Number</label>
+                    </div>
+                    <div class="form-group floating span-4">
+                        <select id="vtype" required>
+                            <!-- Empty hidden option bypasses :valid check so label floats correctly when selected -->
+                            <option value="" disabled selected hidden></option> 
+                            <option value="truck">Heavy Truck (Class 8)</option>
+                            <option value="trailer">Trailer / Flatbed</option>
+                            <option value="mini">Box Truck / Mini</option>
+                        </select>
+                        <label for="vtype">Vehicle Class</label>
+                        <i class="fas fa-chevron-down select-icon"></i>
+                    </div>
+                    <div class="form-group floating span-4">
+                        <input type="text" id="capacity" placeholder=" ">
+                        <label for="capacity">Load Capacity (Optional)</label>
+                    </div>
+                    <div class="form-group floating span-4">
+                        <select id="availability" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="local">Local Routing Only</option>
+                            <option value="long">OTR / Long Haul</option>
+                            <option value="both">Flexible (Both)</option>
+                        </select>
+                        <label for="availability">Route Preference</label>
+                        <i class="fas fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+
+                <div class="section-title"><i class="fas fa-lock"></i> Security Clearance</div>
+                <div class="form-grid">
+                    <div class="form-group floating span-12">
+                        <input type="password" id="password" placeholder=" " required>
+                        <label for="password">Create Password</label>
+                    </div>
+                    <div class="form-group floating span-12">
+                        <input type="password" id="confirm" placeholder=" " required>
+                        <label for="confirm">Verify Password</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn stagger-4">
+                    Complete Activation <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="login-link stagger-4">
+                    Already registered? <a href="login.html">Sign in to Dashboard</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 TruckSupport | 
+    <a href="#">Privacy</a> | 
+    <a href="#">Terms</a>
+</div>
+
+</body>
+</html>
