@@ -4,11 +4,11 @@
             --primary-hover: #fbbf24;
             --primary-glow: rgba(245, 158, 11, 0.2);
             --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.85); /* Increased opacity from 0.65 */
-            --card-border: rgba(255, 255, 255, 0.15); /* Improved border visibility */
+            --card-bg: rgba(30, 41, 59, 0.85);                          /* Increased opacity from 0.65 */
+            --card-border: rgba(255, 255, 255, 0.15);                   /* Improved border visibility */
             --card-border-highlight: rgba(255, 255, 255, 0.3);
-            --input-bg: rgba(15, 23, 42, 0.5); /* Boosted base input visibility */
-            --input-border: rgba(255, 255, 255, 0.15); /* Boosted base border contrast */
+            --input-bg: rgba(15, 23, 42, 0.5);                          /* Boosted base input visibility */
+            --input-border: rgba(255, 255, 255, 0.15);                  /* Boosted base border contrast */
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --success: #10b981;
@@ -31,34 +31,63 @@
         }
 
         .header {
-            position: fixed; top: 0; width: 100%; padding: 1.5rem 4rem;
-            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            position: fixed; top: 0; 
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            z-index: 1000;
             background: linear-gradient(to bottom, rgba(15,23,42,0.9), rgba(15,23,42,0));
             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .header .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
-        .header .logo span { color: var(--primary); }
+        .header .logo { 
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px; 
+        }
+        .header .logo span {
+            
+            color: var(--primary); }
+
         .header a { 
-            color: #fff; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.05); padding: 0.5rem 1.25rem;
+            color: #fff;
+             text-decoration: none; 
+             font-weight: 600; background: rgba(255,255,255,0.05); 
+             padding: 0.5rem 1.25rem;
             border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;
         }
-        .header a:hover { background: rgba(255,255,255,0.1); border-color: var(--primary); color: var(--primary-hover); }
+        .header a:hover { background: rgba(255,255,255,0.1);
+             border-color: var(--primary);
+             color: var(--primary-hover); }
 
         .footer {
-            position: fixed; bottom: 0; width: 100%; text-align: center; padding: 1rem; font-size: 0.85rem;
+            position: fixed;
+            bottom: 0; width: 100%;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.85rem;
             background: linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0));
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 1000; color: var(--text-muted);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); 
+            z-index: 1000;
+            color: var(--text-muted);
         }
-        .footer a { color: var(--text-muted); text-decoration: none; margin: 0 8px; transition: color 0.3s ease; }
-        .footer a:hover { color: var(--primary-hover); }
+        .footer a { 
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.3s ease; }
+        .footer a:hover {
+             color: var(--primary-hover); 
+            }
 
-        /* Background Enhancements */
+        /* ________________________________________Background Enhancements____________________________________________ */
         .glow-orb { position: fixed; border-radius: 50%; filter: blur(100px); z-index: 1; pointer-events: none; opacity: 0.6; }
         .orb-1 { width: 500px; height: 500px; background: rgba(245, 158, 11, 0.1); top: -100px; left: -100px; }
         .orb-2 { width: 700px; height: 700px; background: rgba(30, 58, 138, 0.15); bottom: -200px; right: -200px; }
         .orb-3 { width: 400px; height: 400px; background: rgba(16, 185, 129, 0.05); top: 30%; left: 40%; }
 
-        /* Stats & Testimonial UI */
+        /* ________________________________________Stats & Testimonial UI ______________________________________________*/
         .stats-row {
             display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem;
             padding: 1.5rem; border-radius: 16px; background: rgba(15, 23, 42, 0.4);
@@ -97,7 +126,7 @@
 
         .split-layout { display: flex; width: 100%; min-height: 100vh; position: relative; z-index: 10; padding-top: 100px; padding-bottom: 60px; }
 
-        /* Left Pane Enhancements */
+        /* ____________________________________________-Left Pane Enhancements __________________________________________________________________*/
         .left-pane { flex: 1; display: flex; align-items: flex-start; justify-content: flex-start; padding: 4rem 5rem; }
         .content-wrapper { max-width: 600px; margin: auto 0; }
         
@@ -127,7 +156,7 @@
         .highlight-text h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
         .highlight-text p { font-size: 0.95rem; color: var(--text-muted); font-weight: 400; }
 
-        /* Right Pane SaaS Glass Card */
+        /* ______________________________________________Right Pane SaaS Glass Card______________________________________________________ */
         .right-pane { flex: 1.5; display: flex; align-items: flex-start; justify-content: center; padding: 4rem; position: relative; }
         .glass-card {
             width: 100%; max-width: 1000px; padding: 4.5rem; margin: auto;
@@ -143,7 +172,7 @@
         .right-title { font-size: 2.25rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
         .right-subtitle { font-size: 1.05rem; color: var(--text-muted); }
 
-        /* Modern SaaS Section Titles */
+        /*_____________________________________________________- Modern SaaS Section Titles_______________________________________________________ */
         .section-title {
             display: flex; align-items: center; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
             letter-spacing: 1.5px; color: var(--text-muted); margin: 2rem 0 1.25rem;
@@ -153,7 +182,7 @@
         }
         .section-title i { color: var(--primary); margin-right: 0.5rem; font-size: 0.9rem; }
 
-        /* Floating Label Inputs Grid System */
+        /* ____________________________________________________Floating Label Inputs Grid System ____________________________________________________*/
         .form-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem 2.5rem; }
         .span-12 { grid-column: span 12; }
         .span-6 { grid-column: span 6; }
@@ -178,20 +207,20 @@
         }
         .form-group.floating input:focus ~ label, .form-group.floating select:focus ~ label { color: var(--primary); }
 
-        /* Input Interaction Polish (Inverted Dark Mode Text on Focus) */
+        /*___________________________________________ Input Interaction Polish (Inverted Dark Mode Text on Focus) ____________________________________*/
         .form-group.floating input:hover, .form-group.floating select:hover { border-color: rgba(255,255,255,0.3); background: rgba(30,41,59,1); }
         .form-group.floating input:focus, .form-group.floating select:focus {
             outline: none; background: #ffffff; color: #0f172a; border-color: var(--primary);
             box-shadow: 0 0 0 4px var(--primary-glow), inset 0 2px 4px rgba(0,0,0,0.05); text-shadow: none;
         }
 
-        /* Custom Selector Chevron */
+        /* ______________________________________________________________Custom Selector Chevron__________________________________________________________ */
         .select-icon {
             position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; transition: transform 0.3s ease, color 0.3s ease;
         }
         .form-group.floating select:focus ~ .select-icon { transform: translateY(-50%) rotate(180deg); color: var(--primary); }
 
-        /* Validation UI */
+        /*_____________________________________________________________ Validation UI _____________________________________________________________*/
         .form-group.floating.error input { border-color: var(--error); box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1); background: rgba(239,68,68,0.05); }
         .form-group.floating.error label { color: var(--error) !important; }
         .error-msg { display: flex; align-items: center; gap: 6px; color: var(--error); font-size: 0.8rem; font-weight: 600; margin-top: 8px; margin-left: 4px; animation: fadeInUp 0.3s ease forwards; }
@@ -200,7 +229,7 @@
         .form-group.floating.success label { color: var(--success) !important; }
         .success-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--success); font-size: 1.1rem; pointer-events: none; }
 
-        /* Premium CTA Button */
+        /* _____________________________________________________________Premium CTA Button_____________________________________________________________ */
         .submit-btn {
             position: relative; overflow: hidden; width: 100%; padding: 18px; margin-top: 2rem;
             background: linear-gradient(135deg, #f59e0b, #ea580c); color: #fff; border: none; border-radius: 16px;
@@ -221,14 +250,14 @@
         .login-link a { color: var(--primary); text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
         .login-link a:hover { color: var(--primary-hover); text-shadow: 0 0 10px var(--primary-glow); }
 
-        /* Responsive Improvements */
+        /* _____________________________________________________________Responsive Improvements_____________________________________________________________ */
         @media (max-width: 1200px) { .left-pane { padding: 4rem 3rem; } .left-title { font-size: 3rem; } }
         @media (max-width: 1024px) {
             .split-layout { flex-direction: column; } .left-pane, .right-pane { width: 100%; padding: 4rem 2rem; }
             .glass-card { max-width: 100%; padding: 4rem 3rem; } body::before { background: linear-gradient(180deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.95) 100%); }
         }
         @media (max-width: 800px) {
-            /* Safely collapse the grid matrix into a single column for tablets */
+            /* ________________________________________Safely collapse the grid matrix into a single column for tablets______________________________________ */
             .form-grid { display: flex; flex-direction: column; gap: 1.5rem; }
             .glass-card { padding: 3rem 2.5rem; }
         }
